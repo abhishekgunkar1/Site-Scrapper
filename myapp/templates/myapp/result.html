@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="margin-left: 500px;">Site Link scraper</h1>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <form style="margin-top: 50px;" method="POST" action="/">
+                    {% csrf_token %}
+                    <input class="form-control" type="text" name="site" id="site" placeholder="enter site address">
+                    </div>
+
+                    <div class="col-md-1">
+                        <button style="margin-top: 50px;" class="btn btn-primary" type="submit">Scrape</button>
+                    </div>
+                </form>
+                <div class="col-md-7">
+                    <a style="margin-top: 50px;" class="btn btn-danger" href="/delete">Delete</a>
+                </div>
+        </div>
+
+    </br>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">LINK</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for link in data %}
+                    <tr>
+                        <td>{{link.id}}</td>
+                        <td>{{link.name}}</td>
+                        <td>{{link.address}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
