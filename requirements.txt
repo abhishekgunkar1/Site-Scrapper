@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.2
+Django==3.2.12
+django-crispy-forms==1.14.0
+djangorestframework==3.14.0
+Flask==2.2.2
+Flask-Bcrypt==1.0.1
+Flask-Limiter==3.4.0
+Flask-Login==0.6.2
+Flask-Mail==0.9.1
+Flask-SQLAlchemy==3.0.2
+Flask-WTF==1.0.1
